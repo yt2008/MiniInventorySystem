@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MiniInventorySystem.Services;
 
 namespace MiniInventorySystem
 {
@@ -22,6 +23,8 @@ namespace MiniInventorySystem
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddTransient<IComputerRepository, MockComputerRepository>();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
