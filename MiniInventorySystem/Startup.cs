@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MiniInventorySystem.Models;
 using MiniInventorySystem.Services;
 
 namespace MiniInventorySystem
@@ -24,12 +24,16 @@ namespace MiniInventorySystem
         {
             services.AddControllersWithViews();
 
-            services.AddTransient<IComputerRepository, MockComputerRepository>();
+            services.AddTransient<IComputerRepository, ComputerRepository>();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/build";
+            });
+            services.AddDbContext<MiniInventorySystemContext>(option =>
+            {
+                option.UseSqlite(Configuration["DbContext:ConnectionString"]);
             });
         }
 
