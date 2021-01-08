@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
 using MiniInventorySystem.Models;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MiniInventorySystem.Services
 {
@@ -14,14 +14,14 @@ namespace MiniInventorySystem.Services
         {
             _context = context;
         }
-        public IEnumerable<Desktop> GetDesktops()
+        public async Task<IEnumerable<Desktop>> GetDesktopsAsync()
         {
-            return _context.Desktops;
+            return await _context.Desktops.ToListAsync();
         }
 
-        public Desktop GetDesktop(Guid id)
+        public async Task<Desktop> GetDesktopAsync(Guid id)
         {
-            return _context.Desktops.FirstOrDefault(x => x.Id == id);
+            return await _context.Desktops.FirstOrDefaultAsync(x => x.Id == id);
         }
     }
 }
