@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MiniInventorySystem.Models
 {
-    public class Computer
+    public abstract class Computer
     {
         [Key]
         public Guid Id { get; set; }
@@ -16,7 +16,6 @@ namespace MiniInventorySystem.Models
         public string Brand { get; set; }
         public int UsbPorts { get; set; }
         public int RamSlots { get; set; }
-        public string FromFactor { get; set; }
         public int Quantity { get; set; }
     }
 }

@@ -24,7 +24,7 @@ namespace MiniInventorySystem
         {
             services.AddControllersWithViews();
 
-            services.AddTransient<IComputerRepository, ComputerRepository>();
+            services.AddTransient<IDesktopRepository, DesktopRepository>();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

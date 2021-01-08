@@ -6,9 +6,9 @@ using MiniInventorySystem.Models;
 
 namespace MiniInventorySystem.Services
 {
-    public interface IComputerRepository
+    public interface IDesktopRepository
     {
-        IEnumerable<Computer> GetComputers();
-        Computer GetComputer(Guid computerId);
+        IEnumerable<Desktop> GetDesktops();
+        Desktop GetDesktop(Guid id);
     }
 }

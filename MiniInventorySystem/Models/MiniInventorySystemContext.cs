@@ -13,15 +13,15 @@ namespace MiniInventorySystem.Models
 
         }
 
-        public DbSet<Computer> Computers { get; set; }
+        public DbSet<Desktop> Desktops { get; set; }
+        public DbSet<Laptop> Laptops { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Computer>().HasData(new Computer
+            modelBuilder.Entity<Desktop>().HasData(new Desktop
             {
                 Id = Guid.NewGuid(),
                 Brand = "Dell",
-                FromFactor = "",
                 Processor = "i7",
                 Quantity = 10,
                 RamSlots = 4,

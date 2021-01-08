@@ -12,16 +12,16 @@ namespace MiniInventorySystem.Controllers
     [ApiController]
     public class ComputersController : ControllerBase
     {
-        private IComputerRepository _computerRepository;
+        private IDesktopRepository _desktopRepository;
 
-        public ComputersController(IComputerRepository computerRepository)
+        public ComputersController(IDesktopRepository desktopRepository)
         {
-            _computerRepository = computerRepository;
+            _desktopRepository = desktopRepository;
         }
 
         public IActionResult GetComputers()
         {
-            var computers = _computerRepository.GetComputers();
+            var computers = _desktopRepository.GetDesktops();
             return Ok(computers);
         }
     }
