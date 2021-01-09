@@ -9,5 +9,6 @@ namespace MiniInventorySystem.Services
     {
         Task<IEnumerable<Desktop>> GetDesktopsAsync();
         Task<Desktop> GetDesktopAsync(Guid id);
+        Task<Desktop> AddDesktopAsync(Desktop desktopViewModel);
     }
 }

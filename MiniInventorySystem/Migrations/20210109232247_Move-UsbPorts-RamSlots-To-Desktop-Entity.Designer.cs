@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MiniInventorySystem.Models;
 
 namespace MiniInventorySystem.Migrations
 {
     [DbContext(typeof(MiniInventorySystemContext))]
-    partial class MiniInventorySystemContextModelSnapshot : ModelSnapshot
+    [Migration("20210109232247_Move-UsbPorts-RamSlots-To-Desktop-Entity")]
+    partial class MoveUsbPortsRamSlotsToDesktopEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

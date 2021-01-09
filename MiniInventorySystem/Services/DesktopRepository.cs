@@ -23,5 +23,19 @@ namespace MiniInventorySystem.Services
         {
             return await _context.Desktops.FirstOrDefaultAsync(x => x.Id == id);
         }
+
+        public async Task<Desktop> AddDesktopAsync(Desktop desktopViewModel)
+        {
+            try
+            {
+                await _context.AddAsync(desktopViewModel);
+                return desktopViewModel;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
     }
 }

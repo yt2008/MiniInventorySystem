@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace MiniInventorySystem.Interfaces
 {
-    public interface IHasScreen
+    public interface IHasBattery
     {
-        public decimal ScreenSize { get; set; }
+        public decimal BatteryCapacity { get; set; }
     }
 }

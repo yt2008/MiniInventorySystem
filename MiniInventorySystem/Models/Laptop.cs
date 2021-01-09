@@ -6,10 +6,9 @@ using MiniInventorySystem.Interfaces;
 
 namespace MiniInventorySystem.Models
 {
-    public class Laptop : Computer, IHasScreen
+    public class Laptop : Computer, IHasScreen, IHasBattery
     {
-        public string FromFactor { get; set; }
         public decimal ScreenSize { get; set; }
-        public decimal BatterySize { get; set; }
+        public decimal BatteryCapacity { get; set; }
     }
 }

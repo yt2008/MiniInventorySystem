@@ -14,8 +14,6 @@ namespace MiniInventorySystem.Models
         [MaxLength(50)]
         public string Processor { get; set; }
         public string Brand { get; set; }
-        public int UsbPorts { get; set; }
-        public int RamSlots { get; set; }
         public int Quantity { get; set; }
     }
 }
